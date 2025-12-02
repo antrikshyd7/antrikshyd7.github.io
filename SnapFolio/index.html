@@ -17,7 +17,9 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Added Source Sans 3 because custom.css uses it for paragraphs -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -27,6 +29,7 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: SnapFolio
@@ -38,6 +41,9 @@
 </head>
 
 <body class="index-page">
+   <div id="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
 
   <header id="header" class="header dark-background d-flex flex-column justify-content-center">
     <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -398,16 +404,21 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
-          <!-- Left column with summary and contact -->
+
+          <!-- LEFT COLUMN: PROFILE, SUMMARY, CONTACT, SKILLS -->
           <div class="col-lg-4">
             <div class="resume-side" data-aos="fade-right" data-aos-delay="100">
+
+              <!-- Profile image -->
               <div class="profile-img mb-4">
                 <img src="assets/img/imgself.jpg" alt="Profile" class="img-fluid rounded">
               </div>
 
+              <!-- Summary -->
               <h3>Professional Summary</h3>
-              <p>Experianceing Data Architect with expertise in developing scalable, high-performance enterprise solutions. Passionate about leveraging cutting-edge technologies to solve complex business challenges.</p>
+              <p>Experienced Data Architect with expertise in developing scalable, high-performance enterprise solutions. Passionate about leveraging cutting-edge technologies to solve complex business challenges.</p>
 
+              <!-- Contact -->
               <h3 class="mt-4">Contact Information</h3>
               <ul class="contact-info list-unstyled">
                 <li><i class="bi bi-geo-alt"></i> Vilnius Tech, Vilnius, Lithuania</li>
@@ -416,8 +427,10 @@
                 <li><i class="bi bi-linkedin"></i> linkedin.com/antriksh_yd</li>
               </ul>
 
+              <!-- Skills -->
               <div class="skills-animation mt-4">
                 <h3>Technical Skills</h3>
+
                 <div class="skill-item">
                   <div class="d-flex justify-content-between">
                     <span>Web Development</span>
@@ -447,72 +460,103 @@
                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
+              </div><!-- .skills-animation -->
 
-                <div class="skill-item">
-                  <div class="d-flex justify-content-between">
-                    <span>Project Management</span>
-                    <span>80%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+              <!-- Styled Lists with Pseudo-elements/Counters -->
+              <h3 class="mt-4">Key Skills Overview</h3>
+              <ol class="custom-list">
+                <li>Web Development</li>
+                <li>Data Structures &amp; Algorithms</li>
+                <li>Image Processing &amp; Computer Vision</li>
+              </ol>
 
-          <!-- Right column with experience and education -->
-          <div class="col-lg-8 ps-4 ps-lg-5">
-            <!-- Experience Section -->
-            <div class="resume-section" data-aos="fade-up">
-              <h3><i class="bi bi-briefcase me-2"></i>Professional Experience</h3>
+              <h3 class="mt-4">Tools &amp; Technologies</h3>
+              <ul class="custom-list">
+                <li>VS Code
+                  <ul>
+                    <li>Custom snippets</li>
+                    <li>Git integration</li>
+                  </ul>
+                </li>
+                <li>Git &amp; GitHub</li>
+                <li>Linux &amp; Shell scripting</li>
+              </ul>
 
-              <div class="resume-item">
-                <h4>Data Analytic Intern</h4>
-                <h5>2025 - Present</h5>
-                <p class="company"><i class="bi bi-building"></i> Tech Innovations Inc.</p>
-                <ul>
-                  <li>Lead the architectural design and implementation of enterprise-scale applications</li>
-                  <li>Support member in 5 teams and establish technical best practices</li>
-                  <li>Drive adoption of microservices architecture and cloud-native solutions</li>
-                  <li>Reduce system downtime by 75% through improved architecture and monitoring</li>
-                </ul>
-              </div>
+            </div><!-- .resume-side -->
+          </div><!-- .col-lg-4 -->
 
-              
+          <!-- RIGHT COLUMN: TABLE FOR EXPERIENCE, EDUCATION, CERTIFICATIONS -->
+          <div class="col-lg-8">
+            <div class="resume-main" data-aos="fade-left" data-aos-delay="150">
 
-            <!-- Education Section -->
-            <div class="resume-section" data-aos="fade-up" data-aos-delay="100">
-              <h3><i class="bi bi-mortarboard me-2"></i>Education</h3>
+              <!-- Professional Experience -->
+              <h3>Professional Experience</h3>
+              <table class="custom-table mb-4">
+                <thead>
+                  <tr>
+                    <th class="text">Role</th>
+                    <th class="text">Company</th>
+                    <th class="number">Years</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text">Data Analytic Intern</td>
+                    <td class="text">Tech Innovations Inc.</td>
+                    <td class="number">2025 – Present</td>
+                  </tr>
+                </tbody>
+              </table>
 
-              
+              <!-- Education -->
+              <h3>Education</h3>
+              <table class="custom-table mb-4">
+                <thead>
+                  <tr>
+                    <th class="text">Degree</th>
+                    <th class="text">Institution</th>
+                    <th class="number">Years</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text">Bachelor of Information and Communication Technologies</td>
+                    <td class="text">Vilnius Tech</td>
+                    <td class="number">2024 – 2028</td>
+                  </tr>
+                </tbody>
+              </table>
 
-              <div class="resume-item">
-                <h4>Bachelor of Information and Communication technologies</h4>
-                <h5>2024 - 2028</h5>
-                <p class="company"><i class="bi bi-building"></i> Vilnius Tech</p>
-                <p>Dean's List all semesters. Led university's coding club.</p>
-              </div>
-            </div>
+              <!-- Certifications -->
+              <h3>Certifications</h3>
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th class="text">Certification</th>
+                    <th class="text">Provider</th>
+                    <th class="number">Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text">AWS Certified Solutions Architect – Professional</td>
+                    <td class="text">Amazon Web Services</td>
+                    <td class="number">2024</td>
+                  </tr>
+                  <tr>
+                    <td class="text">Google Cloud Professional Architect</td>
+                    <td class="text">Google Cloud</td>
+                    <td class="number">2025</td>
+                  </tr>
+                </tbody>
+              </table>
 
-            <!-- Certifications Section -->
-            <div class="resume-section" data-aos="fade-up" data-aos-delay="200">
-              <h3><i class="bi bi-award me-2"></i>Certifications</h3>
+            </div><!-- .resume-main -->
+          </div><!-- .col-lg-8 -->
 
-              <div class="resume-item">
-                <h4>AWS Certified Solutions Architect - Professional</h4>
-                <h5>2024</h5>
-              </div>
+        </div><!-- .row -->
 
-              <div class="resume-item">
-                <h4>Google Cloud Professional Architect</h4>
-                <h5>2025</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      </div><!-- .container -->
 
     </section><!-- /Resume Section -->
 
@@ -546,7 +590,7 @@
                     <img src="assets/img/Screenshot 2025-11-09 193447.png" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
-                        <span class="category">Photography</span>
+                        <span class="category">Matlab Project</span>
                         <h4>Capturing Moments</h4>
                         <div class="portfolio-links">
                           <a href="assets/img/Screenshot 2025-11-09 192909.png" class="glightbox" title="Capturing Moments"><i class="bi bi-plus-lg"></i></a>
@@ -562,7 +606,7 @@
                     <img src="assets/img/Screenshot 2025-11-09 192909.png" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
-                        <span class="category">Web Design</span>
+                        <span class="category">Matlab Project</span>
                         <h4>Woodcraft Design</h4>
                         <div class="portfolio-links">
                           <a href="assets/img/Screenshot 2025-11-09 192909.png" class="glightbox" title="Woodcraft Design"><i class="bi bi-plus-lg"></i></a>
@@ -578,7 +622,7 @@
                     <img src="assets/img/Screenshot 2025-11-09 194306.png" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
                       <div class="content">
-                        <span class="category">Automotive</span>
+                        <span class="category">HTML Project</span>
                         <h4>Classic Beauty</h4>
                         <div class="portfolio-links">
                           <a href="assets/img/portfolio/portfolio-portrait-2.webp" class="glightbox" title="Classic Beauty"><i class="bi bi-plus-lg"></i></a>
@@ -905,6 +949,16 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Hide preloader when page loads -->
+  <script>
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.display = 'none';
+      }
+    });
+  </script>
 
 </body>
 
